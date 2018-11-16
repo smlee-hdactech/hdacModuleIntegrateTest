@@ -7,4 +7,5 @@ SUBDIRS += \
     hashes
 
 rpccall.depends = strcodec
+hashes.depends = strcodec
 moduleTest.depends = rpccall hashes

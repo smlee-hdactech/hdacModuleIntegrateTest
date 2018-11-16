@@ -2,8 +2,8 @@ TEMPLATE = app
 CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
-CONFIG += link_pkgconfig
-PKGCONFIG += openssl
+#CONFIG += link_pkgconfig
+#PKGCONFIG += openssl
 
 LIBS += -lpthread \
         -L$$OUT_PWD/../strcodec \
@@ -18,3 +18,8 @@ INCLUDEPATH += ../rpccall \
 
 SOURCES += \
         main.cpp
+
+unix {
+    target.path = $$_PRO_FILE_PWD_
+    INSTALLS += target
+}

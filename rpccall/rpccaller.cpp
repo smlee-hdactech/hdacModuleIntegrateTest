@@ -87,7 +87,7 @@ Object CallRPC(const string& strMethod, const Array& params)
     return reply;
 }
 
-void ShowResultWithRPC(const string &method, Array &params)
+void ShowResultWithRPC(const string &method, const Array &params)
 {
     const bool fWait = false; // TODO : to parameter
     const Object reply = CallRPC(method, params);
@@ -131,3 +131,5 @@ void ShowResultWithRPC(const string &method, Array &params)
         fprintf((nRet == 0 ? stdout : stderr), "%s\n", strPrint.c_str());
     }
 }
+
+

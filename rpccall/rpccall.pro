@@ -8,6 +8,8 @@ QT       -= core gui
 
 TARGET = rpccall
 TEMPLATE = lib
+CONFIG += link_pkgconfig
+PKGCONFIG += openssl
 
 DEFINES += RPCCALLER_LIBRARY
 
@@ -24,13 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         rpc/rpcprotocol.cpp \
-    rpccaller.cpp
+    rpccaller.cpp \
+    cif_rpccall.cpp
 
 HEADERS += \
     rpc/rpcprotocol.h \
     utils/tinyformat.h \
     rpccaller.h \
-    rpccaller_global.h
+    rpccaller_global.h \
+    cif_rpccall.h
 
 INCLUDEPATH += ../strcodec
 
@@ -40,6 +44,7 @@ LIBS += -lboost_system \
         -lstrcodec
 
 unix {
-    target.path = /usr/local/lib
+    target.path = $$_PRO_FILE_PWD_
     INSTALLS += target
 }
+

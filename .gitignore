@@ -1,2 +1,5 @@
 
-hdacModuleIntegrateTest\.pro\.user
+debug-build
+profile-build
+release-build
+cgo-check/cgo-check

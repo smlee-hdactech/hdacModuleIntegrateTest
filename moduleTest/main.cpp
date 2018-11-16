@@ -1,6 +1,7 @@
 #include <iostream>
-#include "rpccaller.h"
-#include "hashes.h"
+#include <rpccaller.h>
+#include <hashes.h>
+#include <cif_rpccall.h>
 
 using namespace std;
 using namespace json_spirit;
@@ -28,6 +29,8 @@ int main()
     Array params;
     ShowResultWithRPC("getinfo", params);
 
+    cout << "4. temp test" << endl;
+    getinfo();
 
     return 0;
 }

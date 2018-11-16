@@ -30,6 +30,6 @@ HEADERS += \
     strcodeclib_global.h
 
 unix {
-    target.path = /usr/local/lib
+    target.path = $$_PRO_FILE_PWD_
     INSTALLS += target
 }
