@@ -9,9 +9,12 @@ LIBS += -lpthread \
         -L$$OUT_PWD/../strcodec \
         -lstrcodec \
         -L$$OUT_PWD/../rpccall \
-        -lrpccall
+        -lrpccall \
+        -L$$OUT_PWD/../hashes \
+        -lhashes
 
-INCLUDEPATH += ../rpccall
+INCLUDEPATH += ../rpccall \
+            ../hashes
 
 SOURCES += \
         main.cpp

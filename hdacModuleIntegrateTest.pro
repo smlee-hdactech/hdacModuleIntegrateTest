@@ -3,7 +3,8 @@ TEMPLATE = subdirs
 SUBDIRS += \
     strcodec \
     rpccall \
-    moduleTest
+    moduleTest \
+    hashes
 
 rpccall.depends = strcodec
-moduleTest.depends = rpccall
+moduleTest.depends = rpccall hashes
