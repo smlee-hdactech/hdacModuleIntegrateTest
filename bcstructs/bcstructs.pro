@@ -1,15 +1,16 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-11-14T16:49:42
+# Project created by QtCreator 2018-11-16T11:31:32
 #
 #-------------------------------------------------
 
 QT       -= core gui
 
-TARGET = strcodec
+TARGET = bcstructs
 TEMPLATE = lib
 
-DEFINES += STRCODECLIB_LIBRARY
+DEFINES += HASHES_LIBRARY \
+        HAVE_CONFIG_H
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -23,11 +24,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    strcodeclib.cpp
+        hashes.cpp \
+    utils/allocators.cpp \
+    structs/uint256.cpp \
+    structs/hash.cpp
 
 HEADERS += \
-    strcodeclib.h \
-    strcodeclib_global.h
+        hashes.h \
+        hashes_global.h \
+    utils/serialize.h \
+    utils/allocators.h \
+    structs/uint256.h \
+    structs/hash.h
+
+INCLUDEPATH += ../strcodec \
+        ../hashes
+
+LIBS += -L$$OUT_PWD/../hashes \
+        -lcrypto \
+        -lboost_thread
 
 unix {
     target.path = $$PWD/../install/$$basename(PWD)

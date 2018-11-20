@@ -4,8 +4,11 @@ SUBDIRS += \
     strcodec \
     rpccall \
     moduleTest \
-    hashes
+    hashes \
+    keys \
+    bcstructs
 
 rpccall.depends = strcodec
-hashes.depends = strcodec
-moduleTest.depends = rpccall hashes
+bcstructs.depends = strcodec hashes
+keys.depends = bcstructs hashes
+moduleTest.depends = rpccall bcstructs keys

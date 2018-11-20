@@ -44,7 +44,7 @@ LIBS += -lboost_system \
         -lstrcodec
 
 unix {
-    target.path = $$_PRO_FILE_PWD_
+    target.path = $$PWD/../install/$$basename(PWD)
     INSTALLS += target
 }
 

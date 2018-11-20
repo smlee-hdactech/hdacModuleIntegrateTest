@@ -3,7 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include "crypto/sha256.h"
+#include <sha256.h>
 #include <sstream>
 #include <algorithm>
 #include <strcodeclib.h>

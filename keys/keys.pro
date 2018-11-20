@@ -1,15 +1,19 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-11-14T16:49:42
+# Project created by QtCreator 2018-11-19T15:13:22
 #
 #-------------------------------------------------
 
 QT       -= core gui
 
-TARGET = strcodec
+TARGET = keys
 TEMPLATE = lib
+CONFIG += link_pkgconfig
+PKGCONFIG += openssl \
+            libsecp256k1
 
-DEFINES += STRCODECLIB_LIBRARY
+DEFINES += KEYS_LIBRARY \
+        HAVE_CONFIG_H
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -23,13 +27,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    strcodeclib.cpp
+        keys.cpp \
+    keyslib.cpp \
+    pubkey.cpp \
+    utils/random.cpp \
+    utils/utiltime.cpp
 
 HEADERS += \
-    strcodeclib.h \
-    strcodeclib_global.h
+        keys.h \
+        keys_global.h \ 
+    keyslib.h \
+    pubkey.h \
+    utils/random.h \
+    utils/utiltime.h
+
+INCLUDEPATH += ../hashes ../bcstructs
 
 unix {
     target.path = $$PWD/../install/$$basename(PWD)
     INSTALLS += target
 }
+
+#message($$_PRO_FILE_PWD_)
+#message($$basename(PWD))
+#message($$DESTDIR)
+#message($$OUT_PWD)

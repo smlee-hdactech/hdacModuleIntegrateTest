@@ -8,8 +8,10 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#include "crypto_global.h"
+
 /** A hasher class for SHA-256. */
-class CSHA256
+class CRYPTOSHARED_EXPORT CSHA256
 {
 private:
     uint32_t s[8];

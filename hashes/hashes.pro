@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-11-16T11:31:32
+# Project created by QtCreator 2018-11-19T15:22:01
 #
 #-------------------------------------------------
 
@@ -9,7 +9,8 @@ QT       -= core gui
 TARGET = hashes
 TEMPLATE = lib
 
-DEFINES += HASHES_LIBRARY
+DEFINES += CRYPTO_LIBRARY \
+        HAVE_CONFIG_H
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -23,19 +24,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        hashes.cpp \
-    crypto/sha256.cpp
+        crypto.cpp \
+    sha512.cpp \
+    sha256.cpp \
+    sha1.cpp \
+    ripemd160.cpp \
+    hmac_sha512.cpp \
+    hmac_sha256.cpp
 
 HEADERS += \
-        hashes.h \
-        hashes_global.h \ 
-    crypto/sha256.h \
-    crypto/common.h \
+        crypto.h \
+        crypto_global.h \ 
+    sha512.h \
+    sha256.h \
+    sha1.h \
+    ripemd160.h \
+    hmac_sha512.h \
+    hmac_sha256.h \
+    common.h \
     config/bitcoin-config.h
 
-INCLUDEPATH += ../strcodec
-
 unix {
-    target.path = $$_PRO_FILE_PWD_
+    target.path = $$PWD/../install/$$basename(PWD)
     INSTALLS += target
 }
