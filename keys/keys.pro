@@ -27,19 +27,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        keys.cpp \
     keyslib.cpp \
     pubkey.cpp \
     utils/random.cpp \
-    utils/utiltime.cpp
+    utils/utiltime.cpp \
+    key.cpp
 
 HEADERS += \
-        keys.h \
         keys_global.h \ 
     keyslib.h \
     pubkey.h \
     utils/random.h \
-    utils/utiltime.h
+    utils/utiltime.h \
+    key.h
 
 INCLUDEPATH += ../hashes ../bcstructs
 

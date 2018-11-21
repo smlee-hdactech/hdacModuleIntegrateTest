@@ -1,4 +1,4 @@
-#include "keys.h"
+#include "key.h"
 
 #include <common.h>
 #include "utils/random.h"

@@ -2,7 +2,7 @@
 #include <rpccaller.h>
 #include <hashes.h>
 #include <cif_rpccall.h>
-#include <keys.h>
+#include <key.h>
 #include <strcodeclib.h>
 
 using namespace std;
